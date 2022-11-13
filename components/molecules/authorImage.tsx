@@ -1,13 +1,15 @@
 import Image from "next/image";
+import placeholder from "../../public/author.jpg";
 
 const AuthorImage = () => {
   return (
     <Image
-      src="/images/author.jpg"
+      src={placeholder}
       alt="Author image"
       width={144}
       height={144}
       className="rounded-full"
+      placeholder="blur"
     />
   );
 };
