@@ -299,4 +299,8 @@ body:has(#menu-controller:checked) {
   @apply underline;
 }
 
+body {
+  background-color: rgb(var(--color-neutral-800));
+}
+
 @tailwind utilities;
