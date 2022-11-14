@@ -7,7 +7,7 @@ export interface ImageLogoProps {
 }
 
 export default function ImageLogo({ src, url }: ImageLogoProps) {
-  // @TODO: Add alt text
+  /** @TODO Add alt text */
   return (
     <Link href={url} className="mr-2">
       <Image

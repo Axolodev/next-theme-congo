@@ -1,5 +1,5 @@
-import { ThemeToggler } from "../molecules";
-import { FooterLink } from "../molecules";
+import { Copyright } from "../atoms";
+import { ThemeToggler, FooterLink, Attributions } from "../molecules";
 
 const footerLinks = [
   {
@@ -28,6 +28,8 @@ export default function Footer() {
       <div className="flex items-center justify-between">
         <div>
           {/** @TODO Allow showing / hiding theme attribution and copyright */}
+          <Copyright />
+          <Attributions />
         </div>
         <ThemeToggler />
       </div>

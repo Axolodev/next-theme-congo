@@ -26,7 +26,6 @@ function HybridHeader() {
             {/** @TODO Allow translations */}
           </div>
           {/** @TODO Allow search */}
-          {/** @TODO Search Option */}
           {/* Basic menu */}
           <ul className="hidden list-none flex-row text-right sm:flex">
             {URLs.map(({ url, title, name }) => (
