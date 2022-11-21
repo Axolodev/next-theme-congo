@@ -299,7 +299,7 @@ body:has(#menu-controller:checked) {
   @apply underline;
 }
 
-body {
+html.dark body {
   background-color: rgb(var(--color-neutral-800));
 }
 
