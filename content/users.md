@@ -1,6 +1,6 @@
 ---
 title: "Users"
-date: 2020-08-14
+date: "2020-08-14"
 draft: false
 description: "Some real-life Congo examples."
 slug: "users"
