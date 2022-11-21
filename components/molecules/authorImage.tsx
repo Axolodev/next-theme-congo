@@ -8,7 +8,7 @@ const AuthorImage = () => {
       alt="Author image"
       width={144}
       height={144}
-      className="rounded-full"
+      className="rounded-full mb-2 w-36 h-36"
       placeholder="blur"
     />
   );

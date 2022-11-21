@@ -11,8 +11,8 @@ export default function Attributions() {
         rel="noopener noreferrer"
       >
         Next.js
-      </a>
-      &amp;
+      </a>{" "}
+      &amp;{" "}
       <a
         className="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://git.io/hugo-congo"

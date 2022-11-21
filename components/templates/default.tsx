@@ -6,9 +6,9 @@ export default function Default({ children }: React.PropsWithChildren) {
     <>
       {/** @TODO Allow choosing between headers */}
       <HybridHeader />
-      <article className="flex flex-col items-center justify-center text-center h-full">
+      <main className="flex flex-col items-center justify-center text-center h-full">
         {children}
-      </article>
+      </main>
       <Footer />
     </>
   );

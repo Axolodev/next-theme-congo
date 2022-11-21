@@ -20,14 +20,14 @@ export default function ThemeToggler() {
   }
 
   return (
-    <div className="ltr:mr-14 rtl:ml-14cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400">
+    <div className="mr-14 cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400">
       <button
         aria-label="Toggle theme"
         type="button"
-        className="w-10 h-10 p-3 rounded dark:text-neutral-400 text-neutral-500"
+        className="w-12 h-12 "
         onClick={toggleTheme}
       >
-        <Icon name={isDark ? "moon" : "sun"} />
+        <Icon name={isDark ? "sun" : "moon"} />
       </button>
     </div>
   );

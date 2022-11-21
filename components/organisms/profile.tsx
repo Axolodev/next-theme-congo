@@ -14,7 +14,15 @@ const authorLinks: SocialIcon[] = [
     url: "https://youtube.com/lamatemaga",
   },
   {
+    name: "github",
+    url: "https://github.com/lamatemaga",
+  },
+  {
     name: "linkedin",
+    url: "https://linkedin.com/in/lamatemaga",
+  },
+  {
+    name: "email",
     url: "https://linkedin.com/in/lamatemaga",
   },
 ];
