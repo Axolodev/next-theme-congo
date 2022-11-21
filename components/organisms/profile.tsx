@@ -1,9 +1,9 @@
-import { AuthorImage, AuthorLink } from "../molecules";
-import type { AuthorLinkProps } from "../molecules";
-const authorLinks: AuthorLinkProps[] = [
+import { AuthorImage, AuthorLinks } from "../molecules";
+import type { SocialIcon } from "../molecules";
+const authorLinks: SocialIcon[] = [
   {
-    url: "https://twitter.com/lamatemaga",
     name: "twitter",
+    url: "https://twitter.com/lamatemaga",
   },
   {
     name: "twitch",
@@ -31,11 +31,7 @@ export default function Profile({ children }: React.PropsWithChildren) {
             Ciencia de datos 📈 & Bioinformática 🧬
           </h2>
           <div className="mt-1 text-2xl">
-            <div className="flex flex-wrap text-neutral-400 dark:text-neutral-500">
-              {authorLinks.map((item) => (
-                <AuthorLink {...item} key={item.name} />
-              ))}
-            </div>
+            <AuthorLinks socials={authorLinks} />
           </div>
         </header>
         <section className="prose dark:prose-invert">{children}</section>

@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "../atoms";
+import { Icon } from "../atoms";
 
 export default function ThemeToggler() {
   const [mounted, setMounted] = useState(false);
@@ -27,7 +27,7 @@ export default function ThemeToggler() {
         className="w-10 h-10 p-3 rounded dark:text-neutral-400 text-neutral-500"
         onClick={toggleTheme}
       >
-        {isDark ? <SunIcon /> : <MoonIcon />}
+        <Icon name={isDark ? "moon" : "sun"} />
       </button>
     </div>
   );
