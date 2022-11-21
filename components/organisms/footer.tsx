@@ -25,7 +25,7 @@ export default function Footer() {
           ))}
         </ul>
       </nav>
-      <div className="flex items-center justify-between">
+      <div className="flex justify-between">
         <div>
           {/** @TODO Allow showing / hiding theme attribution and copyright */}
           <Copyright />
