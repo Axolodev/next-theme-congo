@@ -1,10 +1,14 @@
+import Head from "next/head";
 import type { ReactElement } from "react";
-import { Layout404 } from "../components";
+import { DefaultLayout } from "../components";
 
 function NotFound() {
   /** @TODO add i18n support */
   return (
     <>
+      <Head>
+        <title>404 Page not found · La Matemaga</title>
+      </Head>
       <h1 className="mb-3 text-4xl font-extrabold">Página no encontrada 😕</h1>
       <p className="mt-8 mb-12 text-neutral-400 dark:text-neutral-500">
         Error 404
@@ -17,7 +21,7 @@ function NotFound() {
 }
 
 NotFound.getLayout = function getLayout(page: ReactElement) {
-  return <Layout404>{page}</Layout404>;
+  return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default NotFound;
