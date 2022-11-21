@@ -1,6 +1,4 @@
-import Head from "next/head";
-import type { ReactElement } from "react";
-import { DefaultLayout, Profile } from "../components";
+import { Profile } from "../components";
 import type { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
@@ -36,17 +34,6 @@ const Home: NextPageWithLayout = () => {
           utilizan en éstas áreas.
         </p>
       </Profile>
-    </>
-  );
-};
-
-Home.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <>
-      <Head>
-        <title>La Matemaga</title>
-      </Head>
-      <DefaultLayout>{page}</DefaultLayout>
     </>
   );
 };

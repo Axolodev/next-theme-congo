@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { TitleLogo } from "../../molecules";
 
 /** @TODO Grab these links from config files */
 const URLs = [
   {
-    url: "/",
+    url: "/blog",
     title: "Blog",
     name: "Blog",
   },
@@ -30,13 +31,13 @@ function HybridHeader() {
           <ul className="hidden list-none flex-row text-right sm:flex">
             {URLs.map(({ url, title, name }) => (
               <li className="mb-1 sm:mb-0 mr-7 sm:last:mr-0" key={name}>
-                <a
+                <Link
                   className="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
                   href={url}
                   title={title}
                 >
                   {name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

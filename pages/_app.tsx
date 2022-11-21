@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 
 import "../styles/globals.css";
 import "../styles/schemes/avocado.css";
+import { DefaultLayout } from "../components";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -25,9 +26,13 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
+function getDefaultLayout(page: ReactElement) {
+  return <DefaultLayout>{page}</DefaultLayout>;
+}
+
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
+  const getLayout = Component.getLayout || getDefaultLayout;
 
   return <AppLayout>{getLayout(<Component {...pageProps} />)}</AppLayout>;
 }
