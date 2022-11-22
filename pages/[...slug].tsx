@@ -18,7 +18,21 @@ const components = {
 };
 
 export default function RestPage({ content }: Props) {
-  return <MDXRemote {...content} components={components} />;
+  const { frontmatter = {} } = content;
+  const { title } = frontmatter;
+
+  return (
+    <>
+      <h1 className="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {title}
+      </h1>
+      <section className="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+        <div className="min-w-0 min-h-0 max-w-prose grow">
+          <MDXRemote {...content} components={components} />
+        </div>
+      </section>
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
@@ -62,7 +76,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = filteredPaths.map((path) => ({
     params: {
       slug: path.split("/").filter((p) => p),
-      config: "hello",
     },
   }));
 
