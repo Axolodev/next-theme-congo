@@ -1,6 +1,5 @@
 import Head from "next/head";
 import type { ReactElement } from "react";
-import { DefaultLayout } from "../components";
 
 function NotFound() {
   /** @TODO add i18n support */
@@ -19,9 +18,5 @@ function NotFound() {
     </>
   );
 }
-
-NotFound.getLayout = function getLayout(page: ReactElement) {
-  return <DefaultLayout>{page}</DefaultLayout>;
-};
 
 export default NotFound;
