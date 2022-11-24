@@ -7,7 +7,6 @@ tags: ["sample", "katex", "maths", "shortcodes"]
 
 KaTeX can be used to render mathematical notation within articles.
 
-<!--more-->
 
 katex >}}
 
