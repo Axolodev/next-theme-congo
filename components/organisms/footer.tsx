@@ -7,11 +7,6 @@ const footerLinks = [
     url: "/tags",
     title: "Etiquetas",
   },
-  {
-    name: "Sobre mí",
-    url: "/about",
-    title: "Sobre mí",
-  },
 ];
 
 export default function Footer() {

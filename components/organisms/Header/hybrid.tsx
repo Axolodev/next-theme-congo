@@ -28,9 +28,9 @@ function HybridHeader() {
           </div>
           {/** @TODO Allow search */}
           {/* Basic menu */}
-          <ul className="hidden list-none flex-row text-right sm:flex">
+          <ul className="list-none flex-col sm:flex-row text-right sm:flex">
             {URLs.map(({ url, title, name }) => (
-              <li className="mb-1 sm:mb-0 mr-7 sm:last:mr-0" key={name}>
+              <li className="mb-1 sm:mb-0 sm:mr-7 sm:last:mr-0" key={name}>
                 <Link
                   className="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
                   href={url}
