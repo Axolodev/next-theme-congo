@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import { readdir } from "fs/promises";
 
 const fileExists = async (filepath: string) => {
   try {
@@ -58,18 +59,32 @@ const findFilename = async (path: string) => {
   return filename;
 };
 
+const getDirectoriesForPath = async (source: string) =>
+  (await readdir(source, { withFileTypes: true }))
+    // Remove index files
+    .filter((dirent) => !dirent.name.includes("index"))
+    // Filter out non-directories and non-md files
+    .filter((dirent) => dirent.isDirectory() || dirent.name.includes(".md"))
+    .map((dirent) => `${source}/${dirent.name}`);
+
 const getContentForPath = async (path: string) => {
   const filename = await findFilename(path);
 
   const content = await fs.readFile(filename, "utf-8");
 
   const isIndex = filename.includes("index.md");
-  /** @TODO get all paths relative to current position */
+
+  let subpaths: string[] = [];
+
+  if (isIndex) {
+    subpaths = await getDirectoriesForPath(path);
+  }
 
   return {
     content,
     filename,
     isIndex,
+    subpaths,
   };
 };
 

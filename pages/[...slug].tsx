@@ -4,12 +4,19 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getConfig } from "../lib";
-import { getAllPaths } from "../utils";
-import getContentForPath from "../utils/getContentForPath";
+import {
+  getAllPaths,
+  getContentForPath,
+  getContentForSubpaths,
+  SubpathsWithContent,
+} from "../utils";
 import { Icon } from "../components";
+import getArticleLinkLayout from "../utils/getArticleLinkLayout";
 
 interface Props {
   content: MDXRemoteSerializeResult;
+  isIndex: boolean;
+  subpaths: SubpathsWithContent[];
 }
 
 const components = {
@@ -17,10 +24,13 @@ const components = {
   Icon: ({ name }: any) => <Icon name={name} />,
 };
 
-export default function RestPage({ content }: Props) {
+export default function RestPage({ content, isIndex, subpaths }: Props) {
   const { frontmatter = {} } = content;
   const { title } = frontmatter;
 
+  const ArticleLinkLayout = getArticleLinkLayout(frontmatter.subpathsLayout);
+
+  /** @TODO Add breadcrumbs */
   return (
     <>
       <h1 className="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
@@ -31,6 +41,9 @@ export default function RestPage({ content }: Props) {
           <MDXRemote {...content} components={components} />
         </div>
       </section>
+      {isIndex && subpaths?.length > 0 && (
+        <ArticleLinkLayout subpaths={subpaths} />
+      )}
     </>
   );
 }
@@ -41,14 +54,21 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const contentPath = config.content.path;
   const filepath = `${contentPath}/${slug.join("/")}`;
 
-  const { content = "", isIndex } = await getContentForPath(filepath);
+  const { content = "", isIndex, subpaths } = await getContentForPath(filepath);
 
   const mdxSource = await serialize(content, { parseFrontmatter: true });
+
+  let subpathsWithData: SubpathsWithContent[] = [];
+
+  if (isIndex) {
+    subpathsWithData = await getContentForSubpaths(subpaths);
+  }
 
   return {
     props: {
       content: mdxSource,
       isIndex,
+      subpaths: subpathsWithData,
     },
   };
 };
