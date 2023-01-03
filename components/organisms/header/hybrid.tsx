@@ -1,21 +1,8 @@
 import Link from "next/link";
 import { TitleLogo } from "../../molecules";
+import type { HeaderProps } from "./types";
 
-/** @TODO Grab these links from config files */
-const URLs = [
-  {
-    url: "/blog",
-    title: "Blog",
-    name: "Blog",
-  },
-  {
-    url: "/about",
-    title: "Categorías",
-    name: "Categorías",
-  },
-];
-
-function HybridHeader() {
+function HybridHeader({ links }: React.PropsWithChildren<HeaderProps>) {
   return (
     <>
       <header className="py-6 font-semibold text-neutral-900 dark:text-neutral print:hidden sm:py-10">
@@ -29,12 +16,12 @@ function HybridHeader() {
           {/** @TODO Allow search */}
           {/* Basic menu */}
           <ul className="list-none flex-col sm:flex-row text-right sm:flex">
-            {URLs.map(({ url, title, name }) => (
+            {links?.map(({ name, pageRef, title }) => (
               <li className="mb-1 sm:mb-0 sm:mr-7 sm:last:mr-0" key={name}>
                 <Link
                   className="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-                  href={url}
-                  title={title}
+                  href={pageRef}
+                  title={title || name}
                 >
                   {name}
                 </Link>
