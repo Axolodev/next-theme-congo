@@ -1,12 +1,12 @@
 import { Icon } from "../atoms";
 import type { IconProps } from "../atoms";
 
-export interface SocialIcon extends IconProps {
+export interface SocialLink extends IconProps {
   url: string;
 }
 
 export interface AuthorLinksProps {
-  socials: SocialIcon[];
+  socials: SocialLink[];
 }
 
 export default function AuthorLinks({ socials }: AuthorLinksProps) {

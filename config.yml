@@ -40,3 +40,20 @@ content:
   # logo: "img/logo.jpg"
   description: "Este es un sitio hecho para mostrar lo chida que soy."
   copyright: "&copy; 2022 Next.js-Theme-Congo and Congo contributors"
+
+  author:
+    name: "Congo"
+    image: "img/author.jpg"
+    headline: "Not your ordinary theme!"
+    bio: "This is an example author bio, and although there's a stock photo of a dog here, this article was actually created by a human. :dog:"
+    links:
+      - name: "twitter"
+        url: "https://twitter.com/lamatemaga"
+      - name: "twitch"
+        url: "https://twitch.tv/lamatemaga"
+      - name: "youtube"
+        url: "https://youtube.com/lamatemaga"
+      - name: "github"
+        url: "https://github.com/lamatemaga"
+      - name: "linkedin"
+        url: "https://linkedin.com/in/lamatemaga"

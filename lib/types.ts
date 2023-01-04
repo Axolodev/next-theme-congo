@@ -1,4 +1,5 @@
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { SocialLink } from "../components/molecules/authorLink";
 import type { SubpathsWithContent } from "../utils";
 
 export interface MenuItem {
@@ -20,9 +21,18 @@ export interface DefaultPageHeadProps extends Record<string, unknown> {
   copyright: string;
 }
 
+interface AuthorSettings {
+  name: string;
+  image: string;
+  headline: string;
+  bio: string;
+  links: SocialLink[];
+}
+
 export interface ContentItem extends DefaultPageHeadProps {
   path: string;
   home: string;
+  author: AuthorSettings;
 }
 
 export interface HeaderSettings {
