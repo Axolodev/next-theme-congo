@@ -25,7 +25,7 @@ const Home: NextPageWithLayout<Props> = ({ content }: Props) => {
 };
 
 export async function getStaticProps() {
-  const config = await getConfig();
+  const config = getConfig();
   const indexPath = `${config.content.path}/${config.content.home}`;
 
   const file = fs.readFileSync(path.resolve(indexPath))?.toString();
@@ -35,6 +35,7 @@ export async function getStaticProps() {
   return {
     props: {
       content: mdxSource,
+      settings: config,
     },
   };
 }

@@ -1,12 +1,26 @@
-const config = {
-  content: {
-    path: "content",
-    home: "_index.md",
-  },
-};
+import yaml from "js-yaml";
+import fs from "fs";
+import path from "path";
+import type { ThemeSettings } from "./types";
 
-export async function loadConfig() {}
+let config: ThemeSettings | null = null;
 
-export function getConfig() {
+const configFileName = "config.yml";
+
+function loadConfig() {
+  const configPath = path.join(process.cwd(), configFileName);
+  const config = yaml.load(
+    fs.readFileSync(configPath, "utf8")
+  ) as ThemeSettings;
   return config;
 }
+
+export function getConfig() {
+  if (!config) {
+    config = loadConfig();
+  }
+
+  return config;
+}
+
+export default getConfig;

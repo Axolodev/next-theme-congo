@@ -50,9 +50,8 @@ export default function RestPage({ content, isIndex, subpaths }: Props) {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const { slug } = params;
-  const config = await getConfig();
-  const contentPath = config.content.path;
-  const filepath = `${contentPath}/${slug.join("/")}`;
+  const config = getConfig();
+  const filepath = `${config.content.path}/${slug.join("/")}`;
 
   const { content = "", isIndex, subpaths } = await getContentForPath(filepath);
 
@@ -69,12 +68,13 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       content: mdxSource,
       isIndex,
       subpaths: subpathsWithData,
+      settings: config,
     },
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const config = await getConfig();
+  const config = getConfig();
 
   const filePaths = await getAllPaths(config.content.path);
 

@@ -1,0 +1,37 @@
+# @TODO Add color scheme support
+# @TODO Add multilanguage suport
+
+languageCode: "es"
+
+header:
+  layout: "hybrid" # valid options: basic, hamburger, hybrid, custom
+  # logo = "img/logo.jpg"
+  showTitle: true
+
+footer:
+  showCopyright: true
+  showThemeAttribution: true
+  showAppearanceSwitcher: true
+  showScrollToTop: true
+
+# config/_default/menus.toml
+menus:
+  main:
+    - name: "Blog"
+      pageRef: "/blog"
+      weight: 10
+    - name: "Categorías"
+      pageRef: "/about"
+      weight: 20
+
+  footer:
+    - name: "Etiquetas"
+      pageRef: "/tags"
+      weight: 30
+    - name: "Sobre mí"
+      pageRef: "/about"
+      weight: 10
+
+content:
+  path: "content"
+  home: "_index.md"

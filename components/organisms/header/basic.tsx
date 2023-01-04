@@ -1,6 +1,7 @@
 import { TitleLogo } from "../../molecules/logo";
+import type { HeaderProps } from "./types";
 
-const BasicHeader = () => {
+const BasicHeader = ({ links }: React.PropsWithChildren<HeaderProps>) => {
   return (
     <header className="py-6 font-semibold text-neutral-900 dark:text-neutral print:hidden sm:py-10">
       <nav className="flex items-start justify-between sm:items-center">
