@@ -8,9 +8,11 @@ import { Profile } from "../components";
 import { getConfig } from "../lib";
 
 import type { NextPageWithLayout } from "./_app";
+import { ThemeSettings } from "../lib/types";
 
 interface Props {
   content: MDXRemoteSerializeResult;
+  settings: ThemeSettings;
 }
 
 const Home: NextPageWithLayout<Props> = ({ content }: Props) => {

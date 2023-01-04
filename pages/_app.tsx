@@ -6,7 +6,7 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import "../styles/schemes/avocado.css";
 import { DefaultLayout } from "../components";
-import { ThemeSettings } from "../lib/types";
+import type { PageProps, ThemeSettings } from "../lib/types";
 import { SettingsContextProvider } from "../components/molecules/settingsContext";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -32,8 +32,8 @@ function AppLayout({ children }: AppLayoutProps) {
   );
 }
 
-function getDefaultLayout(page: ReactElement) {
-  return <DefaultLayout>{page}</DefaultLayout>;
+function getDefaultLayout(page: ReactElement, pageProps: PageProps) {
+  return <DefaultLayout pageProps={pageProps}>{page}</DefaultLayout>;
 }
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
@@ -42,7 +42,9 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <SettingsContextProvider value={pageProps.settings}>
-      <AppLayout>{getLayout(<Component {...pageProps} />)}</AppLayout>
+      <AppLayout>
+        {getLayout(<Component {...pageProps} />, pageProps)}
+      </AppLayout>
     </SettingsContextProvider>
   );
 }

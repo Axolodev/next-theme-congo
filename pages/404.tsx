@@ -1,5 +1,4 @@
 import Head from "next/head";
-import type { ReactElement } from "react";
 
 function NotFound() {
   /** @TODO add i18n support */

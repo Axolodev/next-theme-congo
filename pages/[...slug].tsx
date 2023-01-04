@@ -1,7 +1,6 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import type { GetStaticPaths, GetStaticProps } from "next";
-import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getConfig } from "../lib";
 import {
@@ -12,19 +11,18 @@ import {
 } from "../utils";
 import { Icon } from "../components";
 import getArticleLinkLayout from "../utils/getArticleLinkLayout";
-
-interface Props {
-  content: MDXRemoteSerializeResult;
-  isIndex: boolean;
-  subpaths: SubpathsWithContent[];
-}
+import type { PageProps } from "../lib/types";
 
 const components = {
   Alert: ({ children }: any) => <div className="alert">{children}</div>,
   Icon: ({ name }: any) => <Icon name={name} />,
 };
 
-export default function RestPage({ content, isIndex, subpaths }: Props) {
+export default function RestPage({
+  content,
+  isIndex,
+  subpaths = [],
+}: PageProps) {
   const { frontmatter = {} } = content;
   const { title } = frontmatter;
 

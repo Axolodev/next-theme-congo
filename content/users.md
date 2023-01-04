@@ -1,5 +1,5 @@
 ---
-title: "Users"
+title: ""
 date: "2020-08-14"
 draft: false
 description: "Some real-life Congo examples."

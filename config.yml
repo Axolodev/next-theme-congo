@@ -35,3 +35,8 @@ menus:
 content:
   path: "content"
   home: "_index.md"
+
+  title: "La Matemaga"
+  # logo: "img/logo.jpg"
+  description: "Este es un sitio hecho para mostrar lo chida que soy."
+  copyright: "&copy; 2022 Next.js-Theme-Congo and Congo contributors"

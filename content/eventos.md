@@ -2,7 +2,7 @@
 title: "¡Hola! Soy La Matemaga"
 lastmod: "2022-03-04"
 draft: false
-description: "Página de inicio"
+description: "Hablar de qué clase de presentaciones doy y a qué clase de público he llegado"
 showDateUpdated: true
 xml: false
 ---

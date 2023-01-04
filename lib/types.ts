@@ -1,3 +1,6 @@
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import type { SubpathsWithContent } from "../utils";
+
 export interface MenuItem {
   name: string;
   pageRef: string;
@@ -10,7 +13,14 @@ export interface Menus {
   footer: MenuItem[];
 }
 
-export interface ContentItem {
+export interface DefaultPageHeadProps extends Record<string, unknown> {
+  title: string;
+  logo: string;
+  description: string;
+  copyright: string;
+}
+
+export interface ContentItem extends DefaultPageHeadProps {
   path: string;
   home: string;
 }
@@ -38,4 +48,11 @@ export interface ThemeSettings {
   content: ContentItem;
   header: HeaderSettings;
   footer: FooterSettings;
+}
+
+export interface PageProps {
+  content: MDXRemoteSerializeResult;
+  settings: ThemeSettings;
+  isIndex?: boolean;
+  subpaths?: SubpathsWithContent[];
 }

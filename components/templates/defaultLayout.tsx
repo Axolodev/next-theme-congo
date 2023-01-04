@@ -1,5 +1,6 @@
 import React from "react";
-import { useSettings } from "../molecules/settingsContext";
+import type { PageProps } from "../../lib/types";
+import { ThemeHead } from "../molecules";
 import { BasicHeader, Footer, HybridHeader } from "../organisms";
 
 function getHeader(type?: string) {
@@ -13,8 +14,15 @@ function getHeader(type?: string) {
   }
 }
 
-export default function Default({ children }: React.PropsWithChildren) {
-  const settings = useSettings();
+interface Props {
+  pageProps: PageProps;
+}
+
+export default function Default({
+  children,
+  pageProps,
+}: React.PropsWithChildren<Props>) {
+  const { settings, content } = pageProps;
   const footerLinks =
     settings?.menus.footer.sort((a, b) => a.weight - b.weight) ?? [];
   const headerLinks =
@@ -24,7 +32,7 @@ export default function Default({ children }: React.PropsWithChildren) {
 
   return (
     <>
-      {/** @TODO Allow choosing between headers */}
+      <ThemeHead content={content} settings={settings} />
       <Header links={headerLinks} />
       <main className="relative grow">{children}</main>
       <Footer links={footerLinks} />
