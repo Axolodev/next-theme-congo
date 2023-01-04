@@ -1,5 +1,5 @@
 import React from "react";
-import { useSettingsContext } from "../molecules/settingsContext";
+import { useSettings } from "../molecules/settingsContext";
 import { BasicHeader, Footer, HybridHeader } from "../organisms";
 
 function getHeader(type?: string) {
@@ -14,7 +14,7 @@ function getHeader(type?: string) {
 }
 
 export default function Default({ children }: React.PropsWithChildren) {
-  const settings = useSettingsContext();
+  const settings = useSettings();
   const footerLinks =
     settings?.menus.footer.sort((a, b) => a.weight - b.weight) ?? [];
   const headerLinks =

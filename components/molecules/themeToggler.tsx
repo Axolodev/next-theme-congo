@@ -1,21 +1,16 @@
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Icon } from "../atoms";
+import useIsMounted from "../atoms/useIsMounted";
 
 export default function ThemeToggler() {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
+  const isMounted = useIsMounted();
 
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
+  if (!isMounted) {
     return null;
   }
 
