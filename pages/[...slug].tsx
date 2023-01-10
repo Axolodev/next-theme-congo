@@ -9,14 +9,9 @@ import {
   getContentForSubpaths,
   SubpathsWithContent,
 } from "../utils";
-import { Icon } from "../components";
 import getArticleLinkLayout from "../utils/getArticleLinkLayout";
 import type { PageProps } from "../lib/types";
-
-const components = {
-  Alert: ({ children }: any) => <div className="alert">{children}</div>,
-  Icon: ({ name }: any) => <Icon name={name} />,
-};
+import MarkdownRenderer from "../components/organisms/markdownRenderer";
 
 export default function RestPage({
   content,
@@ -36,7 +31,7 @@ export default function RestPage({
       </h1>
       <section className="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
         <div className="min-w-0 min-h-0 max-w-prose grow">
-          <MDXRemote {...content} components={components} />
+          <MarkdownRenderer content={content} />
         </div>
       </section>
       {isIndex && subpaths?.length > 0 && (
