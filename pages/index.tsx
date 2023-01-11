@@ -8,20 +8,16 @@ import { Profile } from "../components";
 import { getConfig } from "../lib";
 
 import type { NextPageWithLayout } from "./_app";
-import { ThemeSettings } from "../lib/types";
+import MarkdownRenderer from "../components/organisms/markdownRenderer";
 
 interface Props {
   content: MDXRemoteSerializeResult;
-  settings: ThemeSettings;
 }
 
 const Home: NextPageWithLayout<Props> = ({ content }: Props) => {
   return (
     <Profile>
-      <div className="mb-9 text-xl lead">
-        El sitio cool de la matemaga… kinda.
-      </div>
-      <MDXRemote {...content} components={{}} />
+      <MarkdownRenderer content={content} />
     </Profile>
   );
 };

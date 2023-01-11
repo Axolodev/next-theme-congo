@@ -1,5 +1,5 @@
 ---
-title: "¡Hola! Soy La Matemaga"
+title: "Agenda"
 lastmod: "2022-03-04"
 draft: false
 description: "Hablar de qué clase de presentaciones doy y a qué clase de público he llegado"
@@ -7,8 +7,34 @@ showDateUpdated: true
 xml: false
 ---
 
-¡Hola! En redes navego bajo el nombre de “Elaia, la Matemaga”. En este momento estoy concluyendo la Licenciatura en Matemáticas, pero también me apasionan muchísimo áreas como Informática, Física, Biología y Medicina.
+Hablar de qué clase de presentaciones doy y a qué clase de público he llegado
 
-Llevo casi 4 años haciendo investigación en mi universidad como asistente en el Laboratorio de Modelación y Simulación de Sistemas Complejos (¡mates pero para la biología!), particularmente analizando problemas de Bioinformática en un equipo muy diverso. Además, tengo experiencia como practicante en Ciencia de Datos en Hey Banco, la banca digital de Banregio.
+## Próximas actividades
+<Events>
+{[{
+  date: "2023-01-01",
+  title: "Clase de Estadística @ Código Facilito",
+  location: "Virtual",
+  url: "https://example.com",
+  description: "This article offers a sample of basic Markdown formatting that can be used in Congo, also it shows how some basic HTML elements are decorated."
+}, {
+  date: "2023-03-01",
+  title: "Clase de Estadística @ Código Facilito",
+  location: "Virtual",
+  url: "https://example.com"
+}]}
+</Events>
 
-También tengo un canal de [YouTube](http://www.youtube.com/lamatemaga) donde de vez en vez comparto contenido de matemáticas, y un canal de [Twitch](http://www.twitch.tv/lamatemaga) donde te enseño a programar en R, un lenguaje de programación que, al igual que Python, se utiliza muchísimo en el área de Ciencia de Datos. Este último se utiliza particularmente en áreas relacionadas a la biología debido a su fácil integración con software como SAS y SPSS que también se utilizan en éstas áreas.
+<Events title="Actividades pasadas">
+{[{
+  date: "2023-01-01",
+  title: "Clase de Estadística @ Código Facilito",
+  location: "Virtual",
+  url: "https://example.com"
+}, {
+  date: "2023-02-01",
+  title: "Clase de programación en Código Facilito",
+  location: "físico",
+  url: "https://example.com"
+}]}
+</Events>

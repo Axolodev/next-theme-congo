@@ -66,3 +66,11 @@ export interface PageProps {
   isIndex?: boolean;
   subpaths?: SubpathsWithContent[];
 }
+
+export interface AuthorEventProps {
+  title: string;
+  location: string;
+  date: string;
+  url: string;
+  description?: string;
+}

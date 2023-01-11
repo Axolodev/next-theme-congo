@@ -8,13 +8,26 @@ interface Props {
   height?: number;
 }
 
-function Image({ src, alt, width = 300, height = 300 }: Props) {
+function Image({ src, alt, width, height, ...rest }: Props) {
   const isAbsolutePath = getIsAbsolutePath(src);
   let srcPath = src;
   if (isAbsolutePath) {
     srcPath = `/api/fetchImage?src=${src}`;
   }
-  return <NextImage src={srcPath} alt={alt} width={width} height={height} />;
+
+  if (width && height) {
+    return (
+      <NextImage
+        src={srcPath}
+        alt={alt}
+        object-fit="contain"
+        width={width}
+        height={height}
+      />
+    );
+  }
+
+  return <img className="w-full h-auto" src={srcPath} alt={alt} />;
 }
 
 export default Image;

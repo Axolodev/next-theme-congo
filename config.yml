@@ -1,5 +1,5 @@
 # @TODO Add color scheme support
-# @TODO Add multilanguage suport
+# @TODO Add multilanguage support
 
 languageCode: "es"
 
@@ -43,7 +43,7 @@ content:
 
   author:
     name: "Congo"
-    image: "img/author.jpg"
+    image: "/author.jpg"
     headline: "Not your ordinary theme!"
     bio: "This is an example author bio, and although there's a stock photo of a dog here, this article was actually created by a human. :dog:"
     links:
