@@ -1,8 +1,7 @@
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 import type { GetStaticPaths, GetStaticProps } from "next";
-
+import MarkdownRenderer from "../components/organisms/markdownRenderer";
 import { getConfig } from "../lib";
+import type { PageProps } from "../lib/types";
 import {
   getAllPaths,
   getContentForPath,
@@ -10,8 +9,7 @@ import {
   SubpathsWithContent,
 } from "../utils";
 import getArticleLinkLayout from "../utils/getArticleLinkLayout";
-import type { PageProps } from "../lib/types";
-import MarkdownRenderer from "../components/organisms/markdownRenderer";
+import getSerializedMarkdown from "../utils/getSerializedMarkdown";
 
 export default function RestPage({
   content,
@@ -48,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 
   const { content = "", isIndex, subpaths } = await getContentForPath(filepath);
 
-  const mdxSource = await serialize(content, { parseFrontmatter: true });
+  const mdxSource = await getSerializedMarkdown(content);
 
   let subpathsWithData: SubpathsWithContent[] = [];
 
