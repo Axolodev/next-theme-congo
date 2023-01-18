@@ -1,6 +1,6 @@
 import { MDXRemote } from "next-mdx-remote";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { Icon, Image, Lead, AuthorEvents } from "..";
+import { Icon, Image, Lead, AuthorEvents, CTAButton } from "..";
 
 const components = {
   Alert: ({ children }: any) => <div className="alert">{children}</div>,
@@ -11,6 +11,7 @@ const components = {
   Image: (props: any) => <Image {...props} />,
   Lead: (props: any) => <Lead {...props} />,
   Events: (props: any) => <AuthorEvents {...props} />,
+  CTAButton: (props: any) => <CTAButton {...props} />,
 };
 
 const MarkdownRenderer = ({

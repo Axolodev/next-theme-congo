@@ -3,9 +3,10 @@ import svgs from "./svgs";
 
 export interface IconProps {
   name: string;
+  className?: string;
 }
 
-export default function Icon({ name }: IconProps) {
+export default function Icon({ name, className = "" }: IconProps) {
   const Component = svgs[name];
 
   if (!Component) {
@@ -13,7 +14,9 @@ export default function Icon({ name }: IconProps) {
   }
 
   return (
-    <span className="relative inline-block align-text-bottom icon">
+    <span
+      className={`relative inline-block align-text-bottom icon ${className}`}
+    >
       <Component />
     </span>
   );
