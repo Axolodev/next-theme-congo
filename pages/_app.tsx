@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 
 import "../styles/globals.css";
 import "../styles/schemes/avocado.css";
+import "../styles/codeHighlightTheme/github-dark.min.css";
 import { DefaultLayout } from "../components";
 import type { PageProps, ThemeSettings } from "../lib/types";
 import { SettingsContextProvider } from "../components/molecules/settingsContext";

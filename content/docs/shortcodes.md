@@ -60,19 +60,21 @@ New article!
 
 |Parameter|Description|
 |---|---|
-|`href`|The URL that the button should link to.|
-|`target`|The target of the link.|
-|`download`|Whether browser should download the resource rather than navigate to the URL. The value of this parameter will be the name of the downloaded file.|
+|`href`| The URL that the button should link to.|
+|`content` | Alternative way to pass text into the button in case it's not rendering properly. |
+|`mode` | (default is internal) Internal or External. Use External when redirecting to a URL out of this website to do it safely. |
+|`icon` | (optional) Name of the icon you want to use in the button |
+
 
 **Example:**
 
-```md
+```jsx
 <CTAButton href="#button">Call to action</CTAButton>
 
-# With an icon 
+// With an icon 
 <CTAButton href="#button" icon="github" content="Follow me on GitHub!" />
 
-# Alternatively, if your button isn't rendering as you want it to, you can also use the content property:
+// Alternatively, if your button isn't rendering as you want it to, you can also use the content property:
 <CTAButton href="#button" content="Call to action" />
 ```
 
