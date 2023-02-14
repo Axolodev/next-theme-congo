@@ -49,6 +49,10 @@ export interface FooterSettings {
   showScrollToTop: boolean;
 }
 
+export interface GeneralParams {
+  email: string;
+}
+
 export interface ThemeSettings {
   // Default language code for the site
   languageCode: string;
@@ -58,6 +62,7 @@ export interface ThemeSettings {
   content: ContentItem;
   header: HeaderSettings;
   footer: FooterSettings;
+  params: GeneralParams;
 }
 
 export interface PageProps {
@@ -66,7 +71,6 @@ export interface PageProps {
   isIndex?: boolean;
   subpaths?: SubpathsWithContent[];
 }
-
 export interface AuthorEventProps {
   title: string;
   location: string;
