@@ -17,7 +17,7 @@ function ContactForm() {
       <FormField
         id="email"
         placeholder="email"
-        label="Email"
+        label="Correo electrónico"
         type="email"
         required
       />
@@ -25,7 +25,7 @@ function ContactForm() {
         id="content"
         type="textarea"
         placeholder=""
-        label="Content"
+        label="Contenido"
         required
       />
       <div className="pb-2 flex justify-end">
