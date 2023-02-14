@@ -29,7 +29,7 @@ function ContactForm() {
         required
       />
       <div className="pb-2 flex justify-end">
-        <Button label="Submit" />
+        <Button label="Enviar" />
       </div>
     </form>
   );
