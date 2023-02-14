@@ -1,6 +1,9 @@
+import type { GetStaticProps } from "next";
 import Head from "next/head";
+import { getConfig } from "../lib";
+import type { ThemeSettings } from "../lib/types";
 
-function NotFound() {
+function NotFound({ settings }: { settings: ThemeSettings }) {
   /** @TODO add i18n support */
   return (
     <>
@@ -17,5 +20,15 @@ function NotFound() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const config = getConfig();
+
+  return {
+    props: {
+      settings: config,
+    },
+  };
+};
 
 export default NotFound;
