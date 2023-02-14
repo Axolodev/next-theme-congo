@@ -6,6 +6,7 @@ export { default as FooterLink } from "./footerLink";
 export { default as Attributions } from "./attributions";
 export { default as ThemeHead } from "./head";
 export { default as CTAButton } from "./ctaButton";
+export { default as Alert } from "./alert";
 export { default as AuthorEvent } from "./authorEvent";
 export * from "./settingsContext";
 export type { AuthorLinksProps, SocialLink as SocialIcon } from "./authorLink";

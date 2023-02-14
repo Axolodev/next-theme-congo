@@ -18,18 +18,18 @@ footer:
 menus:
   main:
     - name: "Blog"
-      pageRef: "/blog"
+      pageRef: "/tags"
       weight: 10
-    - name: "Categorías"
-      pageRef: "/about"
+    - name: "Eventos"
+      pageRef: "/eventos"
       weight: 20
 
   footer:
     - name: "Etiquetas"
       pageRef: "/tags"
       weight: 30
-    - name: "Sobre mí"
-      pageRef: "/about"
+    - name: "Eventos"
+      pageRef: "/eventos"
       weight: 10
 
 content:

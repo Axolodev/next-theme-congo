@@ -1,9 +1,9 @@
 import { MDXRemote } from "next-mdx-remote";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { Icon, Image, Lead, AuthorEvents, CTAButton } from "..";
+import { Icon, Image, Lead, AuthorEvents, CTAButton, Alert } from "..";
 
 const components = {
-  Alert: ({ children }: any) => <div className="alert">{children}</div>,
+  Alert: (props: any) => <Alert {...props} />,
   Icon: ({ name }: any) => <Icon name={name} />,
   // eslint-disable-next-line jsx-a11y/alt-text
   img: (props: any) => <Image {...props} />,

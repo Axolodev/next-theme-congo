@@ -58,6 +58,11 @@ body:has(#menu-controller:checked) {
   @apply mt-3;
 }
 
+.molecule-alert.molecule-alert > span > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* Table of Contents */
 .toc ul,
 .toc li {

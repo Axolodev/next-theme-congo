@@ -21,22 +21,25 @@ By default, the alert is presented with an exclaimation triangle icon. To change
 **Example:**
 
 ```md
-\</* alert */\>
-**Warning!** This action is destructive!
-\</* /alert */\>
+<Alert>
+  **Warning!** This action is destructive!
+</Alert>
 
-\</* alert "twitter" */\>
-Don't forget to [follow me](https://twitter.com/jpanther) on Twitter.
-\</* /alert */\>
+<Alert icon="twitter">
+  Don't forget to [follow me](https://twitter.com/axolodev) on Twitter.
+</Alert>
 ```
 
-\< alert \>
-**Warning!** This action is destructive!
-\< /alert \>
-&nbsp;
-\< alert "twitter" \>
-Don't forget to [follow me](https://twitter.com/jpanther) on Twitter.
-\< /alert \>
+<Alert>
+  **Warning!** This action is destructive!
+</Alert>
+
+<br/>
+
+<Alert icon="twitter">
+  Don't forget to [follow me](https://twitter.com/axolodev) on Twitter.
+</Alert>
+
 
 ## Badge
 
