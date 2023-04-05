@@ -8,8 +8,11 @@ npm run dev
 yarn dev
 ```
 
-## Todo list:
+## Contributors
+Made with [contrib.rocks](https://contrib.rocks).
+<br/>
 
-- Anything marked as @TODO in the code
-- Add table support to Remark
-- Add date support to frontmatter
+<a href="https://github.com/axolodev/next-theme-congo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=axolodev/next-theme-congo" />
+</a>
+
