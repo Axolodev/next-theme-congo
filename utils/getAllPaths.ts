@@ -21,3 +21,8 @@ export default async function getAllPaths(dir: string) {
 
   return paths;
 }
+
+
+export function getOSSeparator() {
+  return path.sep;
+}

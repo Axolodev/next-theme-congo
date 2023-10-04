@@ -10,6 +10,7 @@ import {
 } from "../utils";
 import getArticleLinkLayout from "../utils/getArticleLinkLayout";
 import getSerializedMarkdown from "../utils/getSerializedMarkdown";
+import { getOSSeparator } from "../utils/getAllPaths";
 
 export default function RestPage({
   content,
@@ -68,6 +69,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const config = getConfig();
 
   const filePaths = await getAllPaths(config.content.path);
+  const separator = getOSSeparator();
 
   /** @TODO allow mutlilanguage content */
 
@@ -79,16 +81,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // Remove "index" from the file path
     .map((path) => path.replace(/_?index$/, ""))
     // Remove the content path
-    .map((path) => path.replace(`${config.content.path}/`, ""))
+    .map((path) => path.replace(`${config.content.path}${separator}`, ""))
     // Remove base content folder
     .filter((path) => path);
 
   // Convert to the type Next.js expects
   const paths = filteredPaths.map((path) => ({
     params: {
-      slug: path.split("/").filter((p) => p),
+      slug: path.split(separator).filter((p) => p),
     },
   }));
+
+  console.log(paths.map((p) => p.params.slug));
 
   return {
     fallback: false,
